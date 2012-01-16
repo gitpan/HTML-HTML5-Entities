@@ -95,6 +95,11 @@ DESCRIPTION
         entities (and vice versa, respectively). These variables may be
         exported.
 
+        Note that %char2entity is a more conservative set of mappings,
+        intended to be safe for serialising strings to HTML4, HTML5 and
+        XHTML 1.x. And for hysterical raisins, %entity2char does not include
+        the leading ampersands, while %char2entity does.
+
 BUGS
     Please report any bugs to
     <http://rt.cpan.org/Dist/Display.html?Queue=HTML-HTML5-Entities>.
@@ -109,7 +114,7 @@ COPYRIGHT AND LICENCE
   Encoding and Decoding Functions
     Copyright (c) 1995-2006 by Gisle Aas.
 
-    Copyright (c) 2011 by Toby Inkster.
+    Copyright (c) 2012 by Toby Inkster.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
@@ -120,7 +125,7 @@ COPYRIGHT AND LICENCE
 
     Copyright (c) 2007-2011 by Wakaba <w@suika.fam.cx>.
 
-    Copyright (c) 2009-2011 by Toby Inkster <tobyink@cpan.org>.
+    Copyright (c) 2009-2012 by Toby Inkster <tobyink@cpan.org>.
 
 DISCLAIMER OF WARRANTIES
     THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
