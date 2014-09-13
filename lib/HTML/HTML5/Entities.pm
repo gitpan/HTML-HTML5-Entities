@@ -7,7 +7,7 @@ use utf8;
 
 BEGIN {
 	$HTML::HTML5::Entities::AUTHORITY = 'cpan:TOBYINK';
-	$HTML::HTML5::Entities::VERSION   = '0.003';
+	$HTML::HTML5::Entities::VERSION   = '0.004';
 }
 
 our (%entity2char, %char2entity, $hex, $default_unsafe_characters, @EXPORT, @EXPORT_OK);
@@ -2526,7 +2526,7 @@ sub decode_entities ($@)
 	for (@$array)
 	{
 		s/
-			(&
+			&(
 				(?:
 					\#(\d+)  |  \#[xX]([0-9a-fA-F]+)  |  (\w+)
 				)
@@ -2538,7 +2538,7 @@ sub decode_entities ($@)
 			elsif (defined $3)
 				{ chr(hex $3); }
 			else
-				{ $entity2char{$4} || $1; }
+				{ $entity2char{"$4;"} || "&$1"; }
 		/xeg;
 	}
 
